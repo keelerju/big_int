@@ -20,7 +20,7 @@ fn main() {
         }
 
         // method to convert the bits of a u32 into the inner vector of Binary values
-        fn convert(&mut self, mut n: u32) {
+        fn convert_from_integer(&mut self, mut n: u32) {
             let mut binary_vec = Vec::<Binary>::new();
 
             while n > 0 {
