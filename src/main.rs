@@ -2,13 +2,14 @@ use std::ops::{Deref, DerefMut};
 
 fn main() {
 
-    #[derive(Default, Clone, Copy, PartialEq, Eq)]
+    #[derive(Default, Debug, Clone, Copy, PartialEq, Eq)]
     enum Binary {
         #[default]
         Zero,
         One,
     }
 
+    #[derive(Debug)]
     struct BigInt {
         inner: Vec<Binary>,
     }
@@ -48,5 +49,10 @@ fn main() {
             &mut self.inner
         }
     }
+
+    // test of conversion with integer
+    let mut bi = BigInt::new();
+    bi.convert(4956849);
+    println!("{:?}", bi);
 
 }
