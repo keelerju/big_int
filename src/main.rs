@@ -23,7 +23,7 @@ fn main() {
             let mut binary_vec = Vec::<Binary>::new();
 
             while n > 0 {
-                binary_vec.push(match (n % 2) {
+                binary_vec.push(match n % 2 {
                     0 => Binary::Zero,
                     1 => Binary::One,
                     _ => return
