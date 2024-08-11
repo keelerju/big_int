@@ -15,7 +15,23 @@ fn main() {
 
     impl BigInt {
         fn new() -> Self {
-            BigInt { inner: vec![Binary::default(); 32] }
+            BigInt { inner: Vec::<Binary>::new() }
+        }
+
+        // method to convert the bits of a u32 into the inner vector of Binary values
+        fn from_u32(&mut self, mut n: u32) {
+            let mut binary_vec = Vec::<Binary>::new();
+
+            while n > 0 {
+                binary_vec.push(match (n % 2) {
+                    0 => Binary::Zero,
+                    1 => Binary::One,
+                    _ => return
+                });
+                n /= 2;
+            }
+
+            self.inner = binary_vec.iter().rev().cloned().collect();
         }
     }
 
