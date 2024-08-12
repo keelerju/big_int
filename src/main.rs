@@ -52,7 +52,7 @@ fn main() {
 
     // test of conversion with integer
     let mut bi = BigInt::new();
-    bi.convert(4956849);
+    bi.convert_from_integer(4956849);
     println!("{:?}", bi);
 
 }
